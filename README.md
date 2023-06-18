@@ -41,16 +41,16 @@ python subdomain_filter.py -f <file> -d <domain> [-o <output>]
 ## Examples
 
 
-python subdomain_filter.py -f myfile.txt -d indeed.com
+python subdomain_filter.py -f myfile.txt -d domain
 
 
 This command will process 'myfile.txt' and filter out subdomains of 'indeed.com', printing the results on the console.
 
 
-python subdomain_filter.py -f myfile.txt -d indeed.com -o output.txt
+python subdomain_filter.py -f myfile.txt -d domain -o output.txt
 
 
-This command will process 'myfile.txt', filter out subdomains of 'indeed.com', and write the results to 'output.txt'.
+This command will process 'myfile.txt', filter out subdomains of 'domain', and write the results to 'output.txt'.
 
 ## License
 
