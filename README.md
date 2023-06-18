@@ -1,56 +1,40 @@
-# Subdomain Filter Tool
+ Subdomain Filter Tool
+======================
 
 This tool allows users to filter subdomain data given from various enumeration tools such as Amass or subl1ster for a given root domain from a file. It's handy when you're dealing with large amounts of data and you're interested only in specific subdomains.
 
-## Features
+Usage:
+------
+python filter_subdomains.py -i input_file -d root_domain [-o output_file] [-r off_scope]
 
-- **File Input**: You can specify a file for the tool to process.
-- **Domain Filter**: You can specify a root domain to filter out its subdomains from the given file.
-- **Output File**: You can specify a file where the filtered subdomains will be written.
+Arguments:
+----------
+  -i, --input    : Input file path containing the list of subdomains.
+  -d, --domain   : Root domain to filter the subdomains.
+  -o, --output   : Optional. Output file to write the filtered subdomains. If not specified, results will be printed to the console.
+  -r, --off-scope: Optional. Wildcard or file containing off-scope wildcards. Wildcards should use the '*' character as a placeholder for subdomain parts.
 
-## Installation
+Examples:
+---------
+1. Filter subdomains from 'subdomains.txt' with root domain 'tesla.com' and print the results:
+   python filter_subdomains.py -i subdomains.txt -d domain
 
-Clone this repository into your local system.
+2. Filter subdomains from 'subdomains.txt' with root domain 'tesla.com' and write the results to 'filtered_subdomains.txt':
+   python filter_subdomains.py -i subdomains.txt -d domain -o filtered_subdomains.txt
 
+3. Filter subdomains from 'subdomains.txt' with root domain 'tesla.com' and specify an off-scope wildcard pattern:
+   python filter_subdomains.py -i subdomains.txt -d domain -r wildcard.subdomain.root
 
-git clone https://github.com/YourUsername/subdomain-filter.git
+4. Filter subdomains from 'subdomains.txt' with root domain 'tesla.com' and specify an off-scope wildcard file:
+   python filter_subdomains.py -i subdomains.txt -d domain -r off_scope.txt
 
-
-Move into the cloned repository.
-
-
-cd subdomain-filter
-
-
-## Usage
-
-To use the tool, you need to provide it with a file and a root domain. You can also specify an output file.
-
-### Syntax
-
-
-python subdomain_filter.py -f <file> -d <domain> [-o <output>]
-
-
-### Parameters
-
-- `-f <file>`: This parameter is used to specify the file to be processed. Replace `<file>` with the path of the file.
-- `-d <domain>`: This parameter is used to specify the root domain. Replace `<domain>` with the root domain (for example, 'tesla' or 'tesla.com').
-- `-o <output>`: This is an optional parameter used to specify the output file. If not provided, the output will be printed on the console. Replace `<output>` with the path of the output file.
-
-## Examples
+Note:
+-----
+- The tool matches subdomains based on the specified root domain and removes any subdomains that match the off-scope wildcard patterns.
+- Off-scope wildcards should use the '*' character as a placeholder for subdomain parts. For example, 'wildcard.subdomain.root' will match 'chatbot.indeed.com', 'simplyhired.com', etc.
+- The tool supports both file-based and single wildcard off-scope patterns. If the off-scope argument is a file path, it will read the wildcards from the file. If it is a single wildcard pattern, it will treat it as an off-scope pattern.
 
 
-python subdomain_filter.py -f myfile.txt -d domain
-
-
-This command will process 'myfile.txt' and filter out subdomains of 'indeed.com', printing the results on the console.
-
-
-python subdomain_filter.py -f myfile.txt -d domain -o output.txt
-
-
-This command will process 'myfile.txt', filter out subdomains of 'domain', and write the results to 'output.txt'.
 
 ## License
 
