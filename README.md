@@ -35,7 +35,7 @@ python subdomain_filter.py -f <file> -d <domain> [-o <output>]
 ### Parameters
 
 - `-f <file>`: This parameter is used to specify the file to be processed. Replace `<file>` with the path of the file.
-- `-d <domain>`: This parameter is used to specify the root domain. Replace `<domain>` with the root domain (for example, 'indeed' or 'indeed.com').
+- `-d <domain>`: This parameter is used to specify the root domain. Replace `<domain>` with the root domain (for example, 'tesla' or 'tesla.com').
 - `-o <output>`: This is an optional parameter used to specify the output file. If not provided, the output will be printed on the console. Replace `<output>` with the path of the output file.
 
 ## Examples
