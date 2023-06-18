@@ -1,4 +1,4 @@
- Subdomain Filter Tool
+ Subdomain Filter
 ======================
 
 This tool allows users to filter subdomain data given from various enumeration tools such as Amass or subl1ster for a given root domain from a file. It's handy when you're dealing with large amounts of data and you're interested only in specific subdomains.
