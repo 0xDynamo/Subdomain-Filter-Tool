@@ -1,33 +1,57 @@
-Subdomain Filter Tool
-The Subdomain Filter Tool is a Python script designed to extract specific subdomains from a file or text. It can be very useful when you want to analyze only a particular set of subdomains from a larger data set.
+# Subdomain Filter Tool
 
-Installation
-To use this tool, you will need Python 3.6 or later. You can check your Python version with python3 --version. If you have the correct Python version, you can clone this repository and run the script.
+This tool allows users to filter subdomains for a given root domain from a file. It's handy when you're dealing with large amounts of data and you're interested only in specific subdomains.
 
-Usage
-You can use this tool by running the following command in your terminal:
+## Features
 
-bash
-Copy code
-python3 subdomain_filter.py -f [FILENAME] -d [DOMAIN]
-In this command:
+- **File Input**: You can specify a file for the tool to process.
+- **Domain Filter**: You can specify a root domain to filter out its subdomains from the given file.
+- **Output File**: You can specify a file where the filtered subdomains will be written.
 
-[FILENAME] should be replaced with the name of the file you want to analyze. The tool will read this file and find all the subdomains of the domain you specify.
-[DOMAIN] should be replaced with the domain you're interested in. The tool will find all subdomains of this domain in the file you provide.
-Example usage:
+## Installation
 
-bash
-Copy code
-python3 subdomain_filter.py -f my_file.txt -d indeed.com
-This command will read my_file.txt and print all subdomains of indeed.com found in the file.
+Clone this repository into your local system.
 
-Output to a File
-If you want the result to be written to a file instead of printed to the console, you can use the -o flag followed by the output file name:
 
-bash
-Copy code
-python3 subdomain_filter.py -f my_file.txt -d indeed.com -o output.txt
-This command will write the subdomains found to output.txt.
+git clone https://github.com/YourUsername/subdomain-filter.git
 
-Disclaimer
-This tool is provided as is, without any warranty. It's intended for educational purposes and should not be used for malicious activities.
+
+Move into the cloned repository.
+
+
+cd subdomain-filter
+
+
+## Usage
+
+To use the tool, you need to provide it with a file and a root domain. You can also specify an output file.
+
+### Syntax
+
+
+python subdomain_filter.py -f <file> -d <domain> [-o <output>]
+
+
+### Parameters
+
+- `-f <file>`: This parameter is used to specify the file to be processed. Replace `<file>` with the path of the file.
+- `-d <domain>`: This parameter is used to specify the root domain. Replace `<domain>` with the root domain (for example, 'indeed' or 'indeed.com').
+- `-o <output>`: This is an optional parameter used to specify the output file. If not provided, the output will be printed on the console. Replace `<output>` with the path of the output file.
+
+## Examples
+
+
+python subdomain_filter.py -f myfile.txt -d indeed.com
+
+
+This command will process 'myfile.txt' and filter out subdomains of 'indeed.com', printing the results on the console.
+
+
+python subdomain_filter.py -f myfile.txt -d indeed.com -o output.txt
+
+
+This command will process 'myfile.txt', filter out subdomains of 'indeed.com', and write the results to 'output.txt'.
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
