@@ -66,6 +66,8 @@ git clone https://github.com/YourUsername/subdomain-filter.git
 
 cd subdomain-filter
 
+```python3 filter_subdomains.py ...```
+
 
 
 ## License
